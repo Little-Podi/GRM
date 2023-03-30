@@ -18,15 +18,15 @@ Compared with previous two-stream trackers, the recent one-stream tracking pipel
 
 ### :bookmark:Strong Performance
 
-|       Benchmark (Metrics)       |         GRM-GOT         |           GRM            |         GRM-L320         |
-| :-----------------------------: | :---------------------: | :----------------------: | :----------------------: |
-|        Training Setting         | only GOT for 100 epochs | four sets for 300 epochs | four sets for 300 epochs |
-| GOT-10k (AO / SR 0.5 / SR 0.75) |   73.4 / 82.9 / 70.4    |            -             |            -             |
-|    LaSOT (AUC / Norm P / P)     |            -            |    69.9 / 79.3 / 75.8    |    71.4 / 81.2 / 77.9    |
-| TrackingNet (AUC / Norm P / P)  |            -            |    84.0 / 88.7 / 83.3    |    84.4 / 88.9 / 84.0    |
-|    AVisT (AUC / OP50 / OP75)    |            -            |    54.5 / 63.1 / 45.2    |    55.1 / 63.8 / 46.9    |
-|           NfS30 (AUC)           |            -            |           65.6           |           66.0           |
-|          UAV123 (AUC)           |            -            |           70.2           |           72.2           |
+|       Benchmark (Metrics)       |       GRM-GOT        |        GRM         |      GRM-L320      |
+| :-----------------------------: | :------------------: | :----------------: | :----------------: |
+|        Training Setting         | only GOT, 100 epochs | 4 sets, 300 epochs | 4 sets, 300 epochs |
+| GOT-10k (AO / SR 0.5 / SR 0.75) |  73.4 / 82.9 / 70.4  |         -          |         -          |
+|    LaSOT (AUC / Norm P / P)     |          -           | 69.9 / 79.3 / 75.8 | 71.4 / 81.2 / 77.9 |
+| TrackingNet (AUC / Norm P / P)  |          -           | 84.0 / 88.7 / 83.3 | 84.4 / 88.9 / 84.0 |
+|    AVisT (AUC / OP50 / OP75)    |          -           | 54.5 / 63.1 / 45.2 | 55.1 / 63.8 / 46.9 |
+|           NfS30 (AUC)           |          -           |        65.6        |        66.0        |
+|          UAV123 (AUC)           |          -           |        70.2        |        72.2        |
 
 ### :bookmark:Inference Speed
 
@@ -122,41 +122,41 @@ Download and unzip these two zip files into the `output` directory under GRM pro
     ```
     python tracking/test.py --dataset lasot
     ```
-    
-  Then evaluate the raw results using the [official MATLAB toolkit](https://github.com/HengLan/LaSOT_Evaluation_Toolkit).
-    
-- TrackingNet
   
-  ```
+    Then evaluate the raw results using the [official MATLAB toolkit](https://github.com/HengLan/LaSOT_Evaluation_Toolkit).
+  
+  - TrackingNet
+  
+    ```
     python tracking/test.py --dataset trackingnet
     python lib/test/utils/transform_trackingnet.py
     ```
   
-  Then upload ```test/tracking_results/grm/vitb_256_ep300/trackingnet_submit.zip``` to the [online evaluation server](https://eval.ai/web/challenges/challenge-page/1805/overview).
+    Then upload ```test/tracking_results/grm/vitb_256_ep300/trackingnet_submit.zip``` to the [online evaluation server](https://eval.ai/web/challenges/challenge-page/1805/overview).
   
-- GOT-10k
+  - GOT-10k
   
-  ```
+    ```
     python tracking/test.py --param vitb_256_got_ep100 --dataset got10k_test
     python lib/test/utils/transform_got10k.py
     ```
   
-  Then upload ```test/tracking_results/grm/vitb_256_got_ep100/got10k_submit.zip``` to the [online evaluation server](http://got-10k.aitestunion.com/submit_instructions).
+    Then upload ```test/tracking_results/grm/vitb_256_got_ep100/got10k_submit.zip``` to the [online evaluation server](http://got-10k.aitestunion.com/submit_instructions).
   
-- NfS30, UAV123, AVisT
+  - NfS30, UAV123, AVisT
   
-  ```
+    ```
     python tracking/test.py --dataset nfs
     python tracking/test.py --dataset uav
     python tracking/test.py --dataset avist
     python tracking/analysis_results.py
     ```
   
-- For multiple threads inference, just add ```--threads 40``` after ```tracking/test.py``` (suppose you want to use 40 threads in total).
+  - For multiple threads inference, just add ```--threads 40``` after ```tracking/test.py``` (suppose you want to use 40 threads in total).
   
-- To show the immediate prediction results during inference, modify ```settings.show_result = True``` in ```lib/test/evaluation/local.py``` (may have bugs if you try this on a remote sever).
+  - To show the immediate prediction results during inference, modify ```settings.show_result = True``` in ```lib/test/evaluation/local.py``` (may have bugs if you try this on a remote sever).
   
-- Please refer to [DynamicViT Example](https://github.com/raoyongming/DynamicViT/blob/master/viz_example.ipynb) for the visualization of search token division results.
+  - Please refer to [DynamicViT Example](https://github.com/raoyongming/DynamicViT/blob/master/viz_example.ipynb) for the visualization of search token division results.
 
 ## Acknowledgement
 
