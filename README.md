@@ -6,7 +6,7 @@ The official PyTorch implementation of our **CVPR 2023** paper:
 
 [Shenyuan Gao](https://github.com/Little-Podi), [Chunluan Zhou](https://www.sites.google.com/view/chunluanzhou/), [Jun Zhang](https://eejzhang.people.ust.hk/)
 
-[~~CVF Open Access~~] [[ArXiv Preprint](https://arxiv.org/abs/2303.16580)] [~~Trained Models~~] [~~Raw Results~~] [[Transformer Tracking](https://github.com/Little-Podi/Transformer_Tracking)]
+[~~CVF Open Access~~] [[ArXiv Preprint](https://arxiv.org/abs/2303.16580)] [[Trained Models](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Raw Results](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Transformer Tracking](https://github.com/Little-Podi/Transformer_Tracking)]
 
 ## Highlight
 
@@ -38,9 +38,9 @@ It takes **less than half a day** to train our baseline model for 300 epochs on 
 
 ## Release
 
-**Trained Models** (containing the baseline model GRM, GRM-GOT and a stronger variant GRM-L320) [~~download zip file~~]
+**Trained Models** (including the baseline model GRM, GRM-GOT and a stronger variant GRM-L320) [[download zip file](https://github.com/Little-Podi/GRM/releases/download/downloads/Trained_Models.zip)]
 
-**Raw Results** (containing raw tracking results on six datasets we benchmarked in the paper and listed above) [~~download zip file~~]
+**Raw Results** (including raw tracking results on six datasets we benchmarked in the paper and listed above) [[download zip file](https://github.com/Little-Podi/GRM/releases/download/downloads/Raw_Results.zip)]
 
 Download and unzip these two zip files into the `output` directory under GRM project path, then both of them can be directly used by our code.
 
