@@ -1,6 +1,6 @@
 # GRM
 
-The official PyTorch implementation of our **CVPR 2023** paper: 
+The official PyTorch implementation of our **CVPR 2023** paper:
 
 **Generalized Relation Modeling for Transformer Tracking**
 
@@ -18,15 +18,15 @@ Compared with previous two-stream trackers, the recent one-stream tracking pipel
 
 ### :bookmark:Strong Performance
 
-|       Benchmark (Metrics)       |       GRM-GOT        |        GRM         |      GRM-L320      |
-| :-----------------------------: | :------------------: | :----------------: | :----------------: |
-|        Training Setting         | only GOT, 100 epochs | 4 sets, 300 epochs | 4 sets, 300 epochs |
-| GOT-10k (AO / SR 0.5 / SR 0.75) |  73.4 / 82.9 / 70.4  |         -          |         -          |
-|    LaSOT (AUC / Norm P / P)     |          -           | 69.9 / 79.3 / 75.8 | 71.4 / 81.2 / 77.9 |
-| TrackingNet (AUC / Norm P / P)  |          -           | 84.0 / 88.7 / 83.3 | 84.4 / 88.9 / 84.0 |
-|    AVisT (AUC / OP50 / OP75)    |          -           | 54.5 / 63.1 / 45.2 | 55.1 / 63.8 / 46.9 |
-|           NfS30 (AUC)           |          -           |        65.6        |        66.0        |
-|          UAV123 (AUC)           |          -           |        70.2        |        72.2        |
+|             Variant             |       GRM-GOT        |          GRM           |        GRM-L320        |
+| :-----------------------------: | :------------------: | :--------------------: | :--------------------: |
+|        Training Setting         | only GOT, 100 epochs | 4 datasets, 300 epochs | 4 datasets, 300 epochs |
+| GOT-10k (AO / SR 0.5 / SR 0.75) |  73.4 / 82.9 / 70.4  |           -            |           -            |
+|    LaSOT (AUC / Norm P / P)     |          -           |   69.9 / 79.3 / 75.8   |   71.4 / 81.2 / 77.9   |
+| TrackingNet (AUC / Norm P / P)  |          -           |   84.0 / 88.7 / 83.3   |   84.4 / 88.9 / 84.0   |
+|    AVisT (AUC / OP50 / OP75)    |          -           |   54.5 / 63.1 / 45.2   |   55.1 / 63.8 / 46.9   |
+|           NfS30 (AUC)           |          -           |          65.6          |          66.0          |
+|          UAV123 (AUC)           |          -           |          70.2          |          72.2          |
 
 ### :bookmark:Inference Speed
 
@@ -54,7 +54,16 @@ Download and unzip these two zip files into the `output` directory under GRM pro
 
   - Clone our repository to your local project directory.
 
-  - Download the training datasets ([LaSOT](http://vision.cs.stonybrook.edu/~lasot/download.html), [TrackingNet](https://github.com/SilvioGiancola/TrackingNet-devkit), [GOT-10k](http://got-10k.aitestunion.com/downloads), [COCO2017](https://cocodataset.org/#download)) and testing datasets ([NfS](http://ci2cv.net/nfs/index.html), [UAV123](https://cemse.kaust.edu.sa/ivul/uav123), [AVisT](https://sites.google.com/view/avist-benchmark)) to your disk, the organized directory should look like: 
+  - Download the pre-trained weights from [MAE](https://github.com/facebookresearch/mae) or [DeiT](https://github.com/facebookresearch/deit/blob/main/README_deit.md), and place the files into the `pretrained_models` directory under GRM project path. You may want to try different pre-trained weights, so I list the links of pre-trained models integrated in this project.
+
+    | Backbone Type |                   Model File                   |                       Checkpoint Link                        |
+    | :-----------: | :--------------------------------------------: | :----------------------------------------------------------: |
+    |  'vit_base'   |          'mae_pretrain_vit_base.pth'           | [download](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth) |
+    |  'vit_large'  |          'mae_pretrain_vit_large.pth'          | [download](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large.pth) |
+    |  'vit_base'   |      'deit_base_patch16_224-b5f2ef4d.pth'      | [download](https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth) |
+    |  'vit_base'   | 'deit_base_distilled_patch16_224-df68dfff.pth' | [download](https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_224-df68dfff.pth) |
+
+  - Download the training datasets ([LaSOT](http://vision.cs.stonybrook.edu/~lasot/download.html), [TrackingNet](https://github.com/SilvioGiancola/TrackingNet-devkit), [GOT-10k](http://got-10k.aitestunion.com/downloads), [COCO2017](https://cocodataset.org/#download)) and testing datasets ([NfS](http://ci2cv.net/nfs/index.html), [UAV123](https://cemse.kaust.edu.sa/ivul/uav123), [AVisT](https://sites.google.com/view/avist-benchmark)) to your disk, the organized directory should look like:
 
     ```
     --LaSOT/
@@ -85,7 +94,7 @@ Download and unzip these two zip files into the `output` directory under GRM pro
     	|--sequences
     ```
 
-  - Edit the **PATH** in ```lib/test/evaluation/local.py``` and ```lib/train/adim/local.py``` to the proper absolute path.
+  - Edit the paths in `lib/test/evaluation/local.py` and `lib/train/adim/local.py` to the proper ones.
 
 - ### Installation
 
@@ -111,7 +120,9 @@ Download and unzip these two zip files into the `output` directory under GRM pro
     python tracking/train.py
     ```
 
-  - For GOT-10k evaluation, remember to set ```--config vitb_256_got_ep100```.
+  - For GOT-10k evaluation, remember to set `--config vitb_256_got_ep100`.
+
+  - To pursuit performance, switch to a stronger variant by setting `--config vitl_320_ep300`.
 
 - ### Evaluation
 
@@ -132,7 +143,7 @@ Download and unzip these two zip files into the `output` directory under GRM pro
     python lib/test/utils/transform_trackingnet.py
     ```
   
-    Then upload ```test/tracking_results/grm/vitb_256_ep300/trackingnet_submit.zip``` to the [online evaluation server](https://eval.ai/web/challenges/challenge-page/1805/overview).
+    Then upload `test/tracking_results/grm/vitb_256_ep300/trackingnet_submit.zip` to the [online evaluation server](https://eval.ai/web/challenges/challenge-page/1805/overview).
   
   - GOT-10k
   
@@ -141,7 +152,7 @@ Download and unzip these two zip files into the `output` directory under GRM pro
     python lib/test/utils/transform_got10k.py
     ```
   
-    Then upload ```test/tracking_results/grm/vitb_256_got_ep100/got10k_submit.zip``` to the [online evaluation server](http://got-10k.aitestunion.com/submit_instructions).
+    Then upload `test/tracking_results/grm/vitb_256_got_ep100/got10k_submit.zip` to the [online evaluation server](http://got-10k.aitestunion.com/submit_instructions).
   
   - NfS30, UAV123, AVisT
   
@@ -152,15 +163,15 @@ Download and unzip these two zip files into the `output` directory under GRM pro
     python tracking/analysis_results.py
     ```
   
-  - For multiple threads inference, just add ```--threads 40``` after ```tracking/test.py``` (suppose you want to use 40 threads in total).
+  - For multiple threads inference, just add `--threads 40` after `tracking/test.py` (suppose you want to use 40 threads in total).
   
-  - To show the immediate prediction results during inference, modify ```settings.show_result = True``` in ```lib/test/evaluation/local.py``` (may have bugs if you try this on a remote sever).
+  - To show the immediate prediction results during inference, modify `settings.show_result = True` in `lib/test/evaluation/local.py` (may have bugs if you try this on a remote sever).
   
   - Please refer to [DynamicViT Example](https://github.com/raoyongming/DynamicViT/blob/master/viz_example.ipynb) for the visualization of search token division results.
 
 ## Acknowledgement
 
-:heart::heart::heart:Our idea is implemented base on the following projects. We really appreciate their wonderful open-source works!
+:heart::heart::heart:Our idea is implemented base on the following projects. We really appreciate their excellent open-source works!
 
 - [OSTrack](https://github.com/botaoye/OSTrack) [[related paper](https://arxiv.org/abs/2203.11991)]
 - [AiATrack](https://github.com/Little-Podi/AiATrack) [[related paper](https://arxiv.org/abs/2207.09603)]
