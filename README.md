@@ -176,7 +176,6 @@ Download and unzip these two zip files into the `output` directory under GRM pro
 - [OSTrack](https://github.com/botaoye/OSTrack) [[related paper](https://arxiv.org/abs/2203.11991)]
 - [AiATrack](https://github.com/Little-Podi/AiATrack) [[related paper](https://arxiv.org/abs/2207.09603)]
 - [DynamicViT](https://github.com/raoyongming/DynamicViT) [[related paper](https://arxiv.org/abs/2106.02034)]
-- [BOAT](https://github.com/mahaoyuHKU/pytorch-boat) [[related paper](https://arxiv.org/abs/2201.13027)]
 - [PyTracking](https://github.com/visionml/pytracking) [[related paper](https://arxiv.org/abs/2208.06888)]
 
 ## Citation
