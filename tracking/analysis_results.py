@@ -18,5 +18,5 @@ dataset = get_dataset('uav')
 print_results(trackers, dataset, 'UAV123', merge_results=True, plot_types=('success', 'prec'), avist=False)
 dataset = get_dataset('avist')
 print_results(trackers, dataset, 'AVisT', merge_results=True, plot_types=('success'), avist=True)
-# plot_results(trackers, dataset, 'AVisT', merge_results=True, plot_types=('success'),
+# plot_results(trackers, dataset, 'AVisT', merge_results=True, plot_types=('success'), avist=True,
 #              skip_missing_seq=False, force_evaluation=True, plot_bin_gap=0.05)

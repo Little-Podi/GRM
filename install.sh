@@ -1,6 +1,6 @@
 #!/bin/bash
 
-conda install -y pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
+conda install -y pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.6 -c pytorch -c conda-forge
 conda install -y tqdm
 pip install PyYAML
 pip install easydict
@@ -17,3 +17,4 @@ pip install visdom
 pip install tensorboardX
 pip install timm
 pip install wandb
+pip install setuptools
