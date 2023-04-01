@@ -182,6 +182,15 @@ Download and unzip these two zip files into the `output` directory under GRM pro
 
 If any parts of our paper and code help your research, please consider citing us and giving a star to our repository.
 
+```
+@article{gao2023generalized,
+  title={Generalized Relation Modeling for Transformer Tracking},
+  author={Gao, Shenyuan and Zhou, Chunluan and Zhang, Jun},
+  journal={arXiv preprint arXiv:2303.16580},
+  year={2023}
+}
+```
+
 ## Contact
 
 If you have any questions or concerns, feel free to open issues or directly contact me through the ways on my GitHub homepage. Suggestions and collaborations are also highly welcome!
