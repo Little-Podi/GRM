@@ -18,15 +18,16 @@ Compared with previous two-stream trackers, the recent one-stream tracking pipel
 
 ### :bookmark:Strong Performance
 
-|             Variant             |       GRM-GOT        |          GRM           |        GRM-L320        |
-| :-----------------------------: | :------------------: | :--------------------: | :--------------------: |
-|        Training Setting         | only GOT, 100 epochs | 4 datasets, 300 epochs | 4 datasets, 300 epochs |
-| GOT-10k (AO / SR 0.5 / SR 0.75) |  73.4 / 82.9 / 70.4  |           -            |           -            |
-|    LaSOT (AUC / Norm P / P)     |          -           |   69.9 / 79.3 / 75.8   |   71.4 / 81.2 / 77.9   |
-| TrackingNet (AUC / Norm P / P)  |          -           |   84.0 / 88.7 / 83.3   |   84.4 / 88.9 / 84.0   |
-|    AVisT (AUC / OP50 / OP75)    |          -           |   54.5 / 63.1 / 45.2   |   55.1 / 63.8 / 46.9   |
-|           NfS30 (AUC)           |          -           |          65.6          |          66.0          |
-|          UAV123 (AUC)           |          -           |          70.2          |          72.2          |
+|             Variant             |         GRM-GOT         |           GRM           |        GRM-L320         |
+| :-----------------------------: | :---------------------: | :---------------------: | :---------------------: |
+|          Model Config           | ViT-B, 256^2 resolution | ViT-B, 256^2 resolution | ViT-L, 320^2 resolution |
+|        Training Setting         |  only GOT, 100 epochs   | 4 datasets, 300 epochs  | 4 datasets, 300 epochs  |
+| GOT-10k (AO / SR 0.5 / SR 0.75) |   73.4 / 82.9 / 70.4    |            -            |            -            |
+|    LaSOT (AUC / Norm P / P)     |            -            |   69.9 / 79.3 / 75.8    |   71.4 / 81.2 / 77.9    |
+| TrackingNet (AUC / Norm P / P)  |            -            |   84.0 / 88.7 / 83.3    |   84.4 / 88.9 / 84.0    |
+|    AVisT (AUC / OP50 / OP75)    |            -            |   54.5 / 63.1 / 45.2    |   55.1 / 63.8 / 46.9    |
+|           NfS30 (AUC)           |            -            |          65.6           |          66.0           |
+|          UAV123 (AUC)           |            -            |          70.2           |          72.2           |
 
 ### :bookmark:Inference Speed
 
