@@ -33,6 +33,7 @@ DATA:
     SAMPLE_PER_EPOCH: 60000
 MODEL:
   PRETRAIN_FILE: 'mae_pretrain_vit_large.pth'
+  TGT_TYPE: 'allmax'
   BACKBONE:
     TYPE: vit_large
     STRIDE: 16
@@ -62,4 +63,3 @@ TEST:
   SEARCH_SIZE: 320
   TEMPLATE_FACTOR: 2.0
   TEMPLATE_SIZE: 128
-  TGT_TYPE: 'allmax'

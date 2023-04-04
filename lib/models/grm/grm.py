@@ -17,7 +17,7 @@ class GRM(nn.Module):
     This is the base class for GRM.
     """
 
-    def __init__(self, transformer, box_head, head_type='CORNER'):
+    def __init__(self, transformer, box_head, head_type='CORNER', tgt_type='allmax'):
         """
         Initializes the model.
 
@@ -32,11 +32,11 @@ class GRM(nn.Module):
         if head_type == 'CORNER' or head_type == 'CENTER':
             self.feat_sz_s = int(box_head.feat_sz)
             self.feat_len_s = int(box_head.feat_sz ** 2)
+        self.tgt_type = tgt_type
 
-    def forward(self, template: torch.Tensor, search: torch.Tensor, template_mask=None,
-                threshold=0., tgt_type='allmax'):
+    def forward(self, template: torch.Tensor, search: torch.Tensor, template_mask=None, threshold=0.):
         x, decisions = self.backbone(z=template, x=search, template_mask=template_mask, search_feat_len=self.feat_len_s,
-                                     threshold=threshold, tgt_type=tgt_type)
+                                     threshold=threshold, tgt_type=self.tgt_type)
 
         # Forward head
         feat_last = x
@@ -118,7 +118,8 @@ def build_grm(cfg, training=True):
     model = GRM(
         backbone,
         box_head,
-        head_type=cfg.MODEL.HEAD.TYPE
+        head_type=cfg.MODEL.HEAD.TYPE,
+        tgt_type=cfg.MODEL.TGT_TYPE
     )
 
     if 'GRM' in cfg.MODEL.PRETRAIN_FILE and training:

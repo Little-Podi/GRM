@@ -23,8 +23,8 @@ class GRM(BaseTracker):
         self.network.eval()
         self.preprocessor = Preprocessor()
         self.state = None
-
         self.feat_sz = self.cfg.TEST.SEARCH_SIZE // self.cfg.MODEL.BACKBONE.STRIDE
+
         # Motion constrain
         self.output_window = hann2d(torch.tensor([self.feat_sz, self.feat_sz]).long(), centered=True).cuda()
 
@@ -40,11 +40,9 @@ class GRM(BaseTracker):
             else:
                 # self.add_hook()
                 self._init_visdom(None, 1)
+
         # For save boxes from all queries
         self.save_all_boxes = params.save_all_boxes
-        self.z_dict1 = {}
-
-        self.tgt_type = self.cfg.TEST.TGT_TYPE
 
         # Set the hyper-parameters
         DATASET_NAME = dataset_name.upper()
@@ -85,8 +83,7 @@ class GRM(BaseTracker):
             # Merge the template and the search
             # Run the transformer
             out_dict = self.network.forward(template=self.z_dict1.tensors, search=x_dict.tensors,
-                                            template_mask=self.box_mask_z, threshold=self.threshold,
-                                            tgt_type=self.tgt_type)
+                                            template_mask=self.box_mask_z, threshold=self.threshold)
 
         # Add hann windows
         pred_score_map = out_dict['score_map']

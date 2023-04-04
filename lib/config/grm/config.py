@@ -10,6 +10,7 @@ cfg = edict()
 # MODEL
 cfg.MODEL = edict()
 cfg.MODEL.PRETRAIN_FILE = 'mae_pretrain_vit_base.pth'
+cfg.MODEL.TGT_TYPE = 'allmax'
 
 # MODEL.BACKBONE
 cfg.MODEL.BACKBONE = edict()
@@ -82,7 +83,6 @@ cfg.TEST.TEMPLATE_SIZE = 128
 cfg.TEST.SEARCH_FACTOR = 5.0
 cfg.TEST.SEARCH_SIZE = 320
 cfg.TEST.EPOCH = 500
-cfg.TEST.TGT_TYPE = 'allmax'
 cfg.TEST.HYPER = edict()
 cfg.TEST.HYPER.DEFAULT = 0
 cfg.TEST.HYPER.LASOT = 0
