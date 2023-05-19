@@ -6,7 +6,7 @@ The official PyTorch implementation of our **CVPR 2023** paper:
 
 [Shenyuan Gao](https://github.com/Little-Podi), [Chunluan Zhou](https://www.sites.google.com/view/chunluanzhou/), [Jun Zhang](https://eejzhang.people.ust.hk/)
 
-[~~CVF Open Access~~] [[ArXiv Preprint](https://arxiv.org/abs/2303.16580)] [[Trained Models](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Raw Results](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Transformer Tracking](https://github.com/Little-Podi/Transformer_Tracking)]
+[[CVF Open Access](https://openaccess.thecvf.com/content/CVPR2023/html/Gao_Generalized_Relation_Modeling_for_Transformer_Tracking_CVPR_2023_paper.html)] [[ArXiv Preprint](https://arxiv.org/abs/2303.16580)] [[Trained Models](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Raw Results](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Transformer Tracking](https://github.com/Little-Podi/Transformer_Tracking)]
 
 ## Highlight
 
@@ -184,11 +184,13 @@ Download and unzip these two zip files into the `output` directory under GRM pro
 If any parts of our paper and code help your research, please consider citing us and giving a star to our repository.
 
 ```
-@article{gao2023generalized,
-  title={Generalized Relation Modeling for Transformer Tracking},
-  author={Gao, Shenyuan and Zhou, Chunluan and Zhang, Jun},
-  journal={arXiv preprint arXiv:2303.16580},
-  year={2023}
+@inproceedings{gao2023grm,
+    author={Gao, Shenyuan and Zhou, Chunluan and Zhang, Jun},
+    title={Generalized Relation Modeling for Transformer Tracking},
+    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month={June},
+    year={2023},
+    pages={18686-18695}
 }
 ```
 
