@@ -184,13 +184,12 @@ Download and unzip these two zip files into the `output` directory under GRM pro
 If any parts of our paper and code help your research, please consider citing us and giving a star to our repository.
 
 ```
-@inproceedings{gao2023grm,
-    author={Gao, Shenyuan and Zhou, Chunluan and Zhang, Jun},
-    title={Generalized Relation Modeling for Transformer Tracking},
-    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month={June},
-    year={2023},
-    pages={18686-18695}
+@inproceedings{gao2023generalized,
+  title={Generalized Relation Modeling for Transformer Tracking},
+  author={Gao, Shenyuan and Zhou, Chunluan and Zhang, Jun},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={18686--18695},
+  year={2023}
 }
 ```
 
