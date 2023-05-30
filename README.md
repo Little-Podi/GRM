@@ -6,7 +6,7 @@ The official PyTorch implementation of our **CVPR 2023** paper:
 
 [Shenyuan Gao](https://github.com/Little-Podi), [Chunluan Zhou](https://www.sites.google.com/view/chunluanzhou/), [Jun Zhang](https://eejzhang.people.ust.hk/)
 
-[[CVF Open Access](https://openaccess.thecvf.com/content/CVPR2023/html/Gao_Generalized_Relation_Modeling_for_Transformer_Tracking_CVPR_2023_paper.html)] [[ArXiv Preprint](https://arxiv.org/abs/2303.16580)] [[YouTube Video](https://youtu.be/bQKN3HV-8XI)] [[Trained Models](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Raw Results](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Transformer Tracking](https://github.com/Little-Podi/Transformer_Tracking)]
+[[CVF Open Access](https://openaccess.thecvf.com/content/CVPR2023/html/Gao_Generalized_Relation_Modeling_for_Transformer_Tracking_CVPR_2023_paper.html)] [[ArXiv Preprint](https://arxiv.org/abs/2303.16580)] [[YouTube Video](https://youtu.be/bQKN3HV-8XI)] [[Trained Models](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Raw Results](https://github.com/Little-Podi/GRM/releases/tag/downloads)] [[Tracking Paper List](https://github.com/Little-Podi/Transformer_Tracking)]
 
 ## Highlight
 
