@@ -130,7 +130,7 @@ class GRM(BaseTracker):
         return torch.stack([cx_real - 0.5 * w, cy_real - 0.5 * h, w, h], dim=-1)
 
     def add_hook(self):
-        conv_features, enc_attn_weights, dec_attn_weights = [], [], []
+        conv_features, enc_attn_weights, dec_attn_weights = list(), list(), list()
 
         for i in range(12):
             self.network.backbone.blocks[i].attn.register_forward_hook(

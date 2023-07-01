@@ -161,5 +161,4 @@ class GRMProcessing(BaseProcessing):
             data = data.apply(stack_tensors)
         else:
             data = data.apply(lambda x: x[0] if isinstance(x, list) else x)
-
         return data

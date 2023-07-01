@@ -13,7 +13,7 @@ def generate_heatmap(bboxes, patch_size=320, stride=16):
         gaussian_maps: List of generated heatmap.
     """
 
-    gaussian_maps = []
+    gaussian_maps = list()
     heatmap_size = patch_size // stride
     for single_patch_bboxes in bboxes:
         bs = single_patch_bboxes.shape[0]
@@ -103,7 +103,7 @@ def compute_grids(features, strides):
     Grids regret to the input image size.
     """
 
-    grids = []
+    grids = list()
     for level, feature in enumerate(features):
         h, w = feature.size()[-2:]
         shifts_x = torch.arange(

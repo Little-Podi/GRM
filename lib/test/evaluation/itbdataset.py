@@ -46,8 +46,8 @@ class ITBDataset(BaseDataset):
         return len(self.sequence_info_list)
 
     def get_fileNames(self, rootdir):
-        fs = []
-        fs_all = []
+        fs = list()
+        fs_all = list()
         for root, dirs, files in os.walk(rootdir, topdown=True):
             files.sort()
             files.sort(key=len)
@@ -61,7 +61,7 @@ class ITBDataset(BaseDataset):
         return fs_all, fs
 
     def _get_sequence_info_list(self, base_path):
-        sequence_info_list = []
+        sequence_info_list = list()
         for scene in os.listdir(base_path):
             if '.' in scene:
                 continue

@@ -116,8 +116,8 @@ class VisFeaturemap(VisBase):
         data = data.view(-1, *data.shape[-2:])
         data = data.flip(1)
         if self.block_list is None:
-            self.block_list = []
-            self.draw_feat = []
+            self.block_list = list()
+            self.draw_feat = list()
             for i in range(data.shape[0]):
                 self.block_list.append({'type': 'checkbox', 'name': 'Channel {:04d}'.format(i), 'value': False})
 
@@ -333,7 +333,7 @@ class VisTracking(VisBase):
         image = data[0]
         boxes_masks = data[1:]
 
-        boxes, masks = [], []
+        boxes, masks = list(), list()
         for bm in boxes_masks:
             if bm is None:
                 continue
@@ -402,7 +402,7 @@ class VisTracking(VisBase):
 class VisBBReg(VisBase):
     def __init__(self, visdom, show_data, title):
         super().__init__(visdom, show_data, title)
-        self.block_list = []
+        self.block_list = list()
 
     def block_list_callback_handler(self, data):
         self.block_list[data['propertyId']]['value'] = data['value']
@@ -442,8 +442,8 @@ class Visdom:
         else:
             self.visdom = visdom.Visdom(server=visdom_info.get('server', '127.0.0.1'),
                                         port=visdom_info.get('port', 8097))
-        self.registered_blocks = {}
-        self.blocks_list = []
+        self.registered_blocks = dict()
+        self.blocks_list = list()
 
         self.visdom.properties(self.blocks_list, opts={'title': 'Block List'}, win='block_list')
         self.visdom.register_event_handler(self.block_list_callback_handler, 'block_list')

@@ -3,7 +3,7 @@ from bytecode import Bytecode, Instr
 
 
 class get_local(object):
-    cache = {}
+    cache = dict()
     is_activate = False
 
     def __init__(self, varname):
@@ -13,7 +13,7 @@ class get_local(object):
         if not type(self).is_activate:
             return func
 
-        type(self).cache[func.__qualname__] = []
+        type(self).cache[func.__qualname__] = list()
         c = Bytecode.from_code(func.__code__)
         extra_code = [
             Instr('STORE_FAST', '_res'),
@@ -42,7 +42,7 @@ class get_local(object):
     @classmethod
     def clear(cls):
         for key in cls.cache.keys():
-            cls.cache[key] = []
+            cls.cache[key] = list()
 
     @classmethod
     def activate(cls):

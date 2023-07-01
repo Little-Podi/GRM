@@ -6,7 +6,7 @@ import _init_paths
 from lib.test.analysis.plot_results import plot_results, print_results
 from lib.test.evaluation import get_dataset, trackerlist
 
-trackers = []
+trackers = list()
 trackers.extend(trackerlist(name='grm', parameter_name='vitb_256_ep300', dataset_name='NOTU',
                             run_ids=None, display_name='vitb_256_ep300'))
 trackers.extend(trackerlist(name='grm', parameter_name='vitl_320_ep300', dataset_name='NOTU',

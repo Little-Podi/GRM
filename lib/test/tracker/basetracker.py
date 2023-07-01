@@ -64,7 +64,7 @@ class BaseTracker:
         return template_bbox
 
     def _init_visdom(self, visdom_info, debug):
-        visdom_info = {} if visdom_info is None else visdom_info
+        visdom_info = dict() if visdom_info is None else visdom_info
         self.pause_mode = False
         self.step = False
         self.next_seq = False

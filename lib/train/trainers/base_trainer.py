@@ -33,7 +33,7 @@ class BaseTrainer:
         self.update_settings(settings)
 
         self.epoch = 0
-        self.stats = {}
+        self.stats = dict()
 
         self.device = getattr(settings, 'device', None)
         if self.device is None:
@@ -286,5 +286,4 @@ class BaseTrainer:
         print('previous checkpoint is loaded')
         print('missing keys:', missing_k)
         print('unexpected keys:', unexpected_k)
-
         return True

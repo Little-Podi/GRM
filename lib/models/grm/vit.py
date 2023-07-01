@@ -474,7 +474,7 @@ def checkpoint_filter_fn(state_dict, model):
     Convert patch embedding weight from manual patchify + linear proj to conv.
     """
 
-    out_dict = {}
+    out_dict = dict()
     if 'model' in state_dict:
         # For DeiT models
         state_dict = state_dict['model']

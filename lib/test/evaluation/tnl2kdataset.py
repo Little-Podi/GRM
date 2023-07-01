@@ -40,7 +40,7 @@ class TNL2kDataset(BaseDataset):
         return len(self.sequence_list)
 
     def _get_sequence_list(self):
-        sequence_list = []
+        sequence_list = list()
         for seq in os.listdir(self.base_path):
             if os.path.isdir(os.path.join(self.base_path, seq)):
                 sequence_list.append(seq)

@@ -25,7 +25,7 @@ def update_settings(settings, cfg):
 
 def names2datasets(name_list: list, settings, image_loader):
     assert isinstance(name_list, list)
-    datasets = []
+    datasets = list()
     for name in name_list:
         assert name in ['LASOT', 'GOT10K_vot_train', 'GOT10K_train', 'COCO17', 'VID', 'TRACKINGNET']
         if name == 'LASOT':

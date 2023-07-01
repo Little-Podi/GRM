@@ -3,7 +3,7 @@ import numpy as np
 
 # Used for visulize eliminated tokens
 def get_keep_indices(decisions):
-    keep_indices = []
+    keep_indices = list()
     for i in range(3):
         if i == 0:
             keep_indices.append(decisions[i])

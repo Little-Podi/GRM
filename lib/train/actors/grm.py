@@ -42,7 +42,7 @@ class GRMActor(BaseActor):
         assert len(data['template_images']) == 1
         assert len(data['search_images']) == 1
 
-        template_list = []
+        template_list = list()
         for i in range(self.settings.num_template):
             template_img_i = data['template_images'][i].view(-1,
                                                              *data['template_images'].shape[2:])  # (batch, 3, 128, 128)

@@ -30,7 +30,7 @@ class BaseBackbone(nn.Module):
         # Resize patch embedding
         if new_patch_size != self.patch_size:
             print('inconsistent patch size with the pretrained weights, interpolate the weight')
-            old_patch_embed = {}
+            old_patch_embed = dict()
             for name, param in self.patch_embed.named_parameters():
                 if 'weight' in name:
                     param = nn.functional.interpolate(param, size=(new_patch_size, new_patch_size),
@@ -77,7 +77,7 @@ class BaseBackbone(nn.Module):
 
         x = self.pos_drop(x)
 
-        decisions = []
+        decisions = list()
         for i, blk in enumerate(self.blocks):
             x, decision = blk(x, template_mask, search_feat_len, threshold=threshold, tgt_type=tgt_type)
             if decision is not None and self.training:

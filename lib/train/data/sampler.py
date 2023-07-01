@@ -310,9 +310,9 @@ class TrackingSampler(torch.utils.data.Dataset):
 
     def get_frame_ids_trident(self, visible):
         # Get template and search ids in a 'trident' manner
-        template_frame_ids_extra = []
+        template_frame_ids_extra = list()
         while None in template_frame_ids_extra or len(template_frame_ids_extra) == 0:
-            template_frame_ids_extra = []
+            template_frame_ids_extra = list()
             # First randomly sample two frames from a video
             template_frame_id1 = self._sample_visible_ids(visible, num_ids=1)  # The initial template id
             search_frame_ids = self._sample_visible_ids(visible, num_ids=1)  # The search region id
@@ -337,9 +337,9 @@ class TrackingSampler(torch.utils.data.Dataset):
 
     def get_frame_ids_stark(self, visible, valid):
         # Get template and search ids in a 'stark' manner
-        template_frame_ids_extra = []
+        template_frame_ids_extra = list()
         while None in template_frame_ids_extra or len(template_frame_ids_extra) == 0:
-            template_frame_ids_extra = []
+            template_frame_ids_extra = list()
             # First randomly sample two frames from a video
             template_frame_id1 = self._sample_visible_ids(visible, num_ids=1)  # The initial template id
             search_frame_ids = self._sample_visible_ids(visible, num_ids=1)  # The search region id

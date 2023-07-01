@@ -19,7 +19,7 @@ class WandbWriter:
             if loader_stats is None:
                 continue
 
-            log_dict = {}
+            log_dict = dict()
             for var_name, val in loader_stats.items():
                 if hasattr(val, 'avg'):
                     log_dict.update({loader_name + '/' + var_name: val.avg})
