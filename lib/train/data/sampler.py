@@ -272,7 +272,6 @@ class TrackingSampler(torch.utils.data.Dataset):
         return torch.tensor([int(cx - w / 2), int(cy - h / 2), int(w), int(h)])
 
     def sample_seq_from_dataset(self, dataset, is_video_dataset):
-
         # Sample a sequence with enough visible frames
         enough_visible_frames = False
         while not enough_visible_frames:
