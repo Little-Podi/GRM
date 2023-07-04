@@ -4,15 +4,15 @@ import os
 class EnvironmentSettings:
     def __init__(self):
         self.workspace_dir = os.path.expanduser(
-            '~') + f'/track/code/GRM'  # Base directory for saving network checkpoints
+            '~') + '/track/code/GRM'  # Base directory for saving network checkpoints
         self.tensorboard_dir = os.path.expanduser(
-            '~') + f'/track/code/GRM/tensorboard'  # Directory for tensorboard files
-        self.pretrained_networks = os.path.expanduser('~') + f'/track/code/GRM/pretrained_networks'
-        self.lasot_dir = os.path.expanduser('~') + f'/track/data/LaSOT'
-        self.got10k_dir = os.path.expanduser('~') + f'/track/data/GOT10k/train'
-        self.got10k_val_dir = os.path.expanduser('~') + f'/track/data/GOT10k/val'
-        self.trackingnet_dir = os.path.expanduser('~') + f'/track/data/TrackingNet'
-        self.coco_dir = os.path.expanduser('~') + f'/track/data/COCO'
+            '~') + '/track/code/GRM/tensorboard'  # Directory for tensorboard files
+        self.pretrained_networks = os.path.expanduser('~') + '/track/code/GRM/pretrained_networks'
+        self.lasot_dir = os.path.expanduser('~') + '/track/data/LaSOT'
+        self.got10k_dir = os.path.expanduser('~') + '/track/data/GOT10k/train'
+        self.got10k_val_dir = os.path.expanduser('~') + '/track/data/GOT10k/val'
+        self.trackingnet_dir = os.path.expanduser('~') + '/track/data/TrackingNet'
+        self.coco_dir = os.path.expanduser('~') + '/track/data/COCO'
         self.lvis_dir = ''
         self.sbd_dir = ''
         self.imagenet_dir = ''
