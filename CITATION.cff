@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: 'Please kindly cite us if you find it useful.'
+authors:
+- family-names: 'Gao'
+  given-names: 'Shenyuan'
+title: 'GRM'
+version: 1.0
+date-released: 2023-03-30
+url: 'https://github.com/Little-Podi/GRM'
+preferred-citation:
+  title: Generalized Relation Modeling for Transformer Tracking
+  type: conference-paper
+  authors:
+  - family-names: 'Gao'
+    given-names: 'Shenyuan'
+  - family-names: 'Zhou'
+    given-names: 'Chunluan'
+  - family-names: 'Zhang'
+    given-names: 'Jun'
+  collection-title: 'Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition' # booktitle
+  start: 18686 # First page number
+  end: 18695 # Last page number
+  year: 2023
