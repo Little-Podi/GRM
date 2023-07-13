@@ -8,7 +8,7 @@ version: 1.0
 date-released: 2023-03-30
 url: 'https://github.com/Little-Podi/GRM'
 preferred-citation:
-  title: Generalized Relation Modeling for Transformer Tracking
+  title: 'Generalized Relation Modeling for Transformer Tracking'
   type: conference-paper
   authors:
   - family-names: 'Gao'
